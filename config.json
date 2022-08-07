@@ -6,9 +6,10 @@
         "sort": "created",
         "order": "asc",
         "includeFork": false,
-        "theme": "dark.css",
+        "theme": "light.css",
         "types": [
             "all"
-        ]
+        ],
+        "linkedin": "www.linkedin.com/in/natalie-hill1"
     }
 ]
