@@ -257,6 +257,7 @@ body {
 #about {
   font-size: 18px;
   font-family: "Questrial", sans-serif;
+  color: var(--text-color);
 }
 
 #about a,
