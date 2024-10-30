@@ -982,9 +982,10 @@ main {
 
 .project-text {
   font-size: var(--fs-6);
-  color: var(--light-gray-70);
+  color: var(--light-gray) !important;
   line-height: 1.6;
 }
+
 
 
 
