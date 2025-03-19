@@ -176,20 +176,20 @@
 }
 
 [data-theme="dark"] .education-section {
-    background: rgba(28, 28, 30, 0.8);
+    /* background: rgba(28, 28, 30, 0.8); */
     border-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 }
 
 [data-theme="dark"] .education-item {
+    background: rgba(28, 28, 30, 0.8);
     border-color: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="dark"] .education-item ul li {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
-    color: var(--color-text);
 }
 
 [data-theme="dark"] .education-item ul li:hover {
@@ -1312,16 +1312,18 @@ body {
 .education-section {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.5rem;
     max-width: 800px;
     margin: 0 auto;
 }
 
 .education-item {
-    background: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: 2rem;
+    background: var(--blur-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--color-primary);
+    border-radius: 20px;
+    padding: 2.5rem;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -1332,52 +1334,78 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 4px;
+    width: 100%;
     height: 100%;
-    background: var(--color-primary);
-    opacity: 0;
+    background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+    opacity: 0.05;
     transition: var(--transition);
+    z-index: 0;
 }
 
 .education-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .education-item:hover::before {
-    opacity: 1;
+    opacity: 0.1;
 }
 
 .education-item h4 {
     color: var(--color-primary);
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
     font-weight: 600;
+    position: relative;
+    z-index: 1;
 }
 
 .education-item .institution {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--color-text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-weight: 500;
+    position: relative;
+    z-index: 1;
 }
 
 .education-item .gpa {
-    font-size: 1rem;
+    display: inline-block;
+    font-size: 0.95rem;
     color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 113, 227, 0.1);
+    border-radius: 980px;
+    position: relative;
+    z-index: 1;
 }
 
 .education-item .honors,
 .education-item .coursework {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .education-item .honors p,
 .education-item .coursework p {
     color: var(--color-primary);
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.education-item .honors p::before,
+.education-item .coursework p::before {
+    content: '';
+    width: 4px;
+    height: 1.1rem;
+    background: var(--color-primary);
+    border-radius: 2px;
 }
 
 .education-item ul {
@@ -1385,30 +1413,39 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
 }
 
 .education-item ul li {
     color: var(--color-text-secondary);
     font-size: 0.95rem;
-    padding: 0.5rem 1rem;
-    background: var(--color-background);
-    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-secondary);
+    border-radius: 12px;
+    transition: var(--transition);
     border: 1px solid var(--color-border);
+    cursor: pointer;
+}
+
+.education-item ul li:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
 }
 
 @media (max-width: 768px) {
     .education-item {
-        padding: 1.5rem;
+        padding: 2rem;
     }
 
     .education-item h4 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .education-item .institution {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .education-item ul {
