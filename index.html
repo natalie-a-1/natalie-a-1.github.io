@@ -1,845 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natalie Hill | DeFi Advocate</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-
 <body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/hi.png" alt="Natalie Hill" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Natalie Hill">Natalie Hill</h1>
-
-          <p class="title">DeFi Advocate</p>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <ion-icon name="code-slash-outline"></ion-icon>
+                <span class="logo-text">Natalie Hill</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="https://github.com/sponsors/natalie-a-1" class="sponsor-btn">Sponsor Me</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <ion-icon name="sunny-outline" class="sun-icon"></ion-icon>
+                    <ion-icon name="moon-outline" class="moon-icon"></ion-icon>
+                </button>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </nav>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Natalie Hill</h1>
+                <p class="hero-subtitle">DeFi Advocate & Blockchain Developer</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn primary">
+                        <ion-icon name="rocket-outline"></ion-icon>
+                        View Projects
+                    </a>
+                    <a href="#contact" class="btn secondary">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        Get in Touch
+                    </a>
+                </div>
             </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:nataliehill1324@gmail.com" class="contact-link">nataliehill1324@gmail.com</a>
+            <div class="hero-background">
+                <div class="gradient-sphere"></div>
             </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+14054766010" class="contact-link">+1 (405) 476-6010</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">July 8, 2003</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>USA</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="http://www.linkedin.com/in/natalie-hill1" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://github.com/natalie-a-1" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-          <!-- 
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li> -->
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li> -->
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li> -->
-
-        </ul>
-
-      </nav>
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <!-- <section class="about-text">
-          <p>
-            I'm an AI + ML engineer with expertise in scalable cloud infrastructure, NLP, and data-driven automation. With a strong foundation in software development and machine learning, I specialize in designing and deploying AI-powered solutions.
-          </p>
-          
-          <p>
-            My focus is on leveraging AI and cloud technologies to optimize workflows, enhance security, and extract insights from complex datasets. With hands-on experience in cloud computing, container orchestration, and NLP, I aim to drive innovation through intelligent automation and research-driven AI applications.
-          </p>
-        </section> -->
-        
-        <section class="about-text">
-          <p>
-            I'm a blockchain developer and DeFi specialist with expertise in smart contract development, decentralized applications, and cryptocurrency systems. With a strong foundation in distributed ledger technologies and cryptography, I specialize in building secure and scalable blockchain solutions.
-          </p>
-          
-          <p>
-            My focus is on leveraging blockchain technologies to create transparent, trustless systems that enhance privacy and financial sovereignty. With hands-on experience in Ethereum, Solidity, and layer-2 scaling solutions, I aim to drive innovation through decentralized protocols and privacy-preserving applications that reshape the future of finance.
-          </p>
         </section>
-        
-        <!--
-          - service
-        -->
-        
-        <section class="service">
-        
-          <h3 class="h3 service-title">What I'm Doing</h3>
-        
-          <ul class="service-list">
-        
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/cloud.png" alt="Blockchain icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Smart Contract Development</h4>
-                <p class="service-item-text">
-                  Designing and deploying secure, gas-optimized smart contracts on Ethereum, Solana, and other EVM-compatible chains using Solidity and Rust, with rigorous security auditing practices.
-                </p>
-              </div>
-            </li>
-        
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/brain.png" alt="DeFi icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">DeFi Protocol Engineering</h4>
-                <p class="service-item-text">
-                  Building decentralized finance protocols like AMMs, lending platforms, and staking solutions with a focus on security, composability, and capital efficiency.
-                </p>
-              </div>
-            </li>
-        
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/neural.png" alt="Privacy icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Privacy-Preserving Systems</h4>
-                <p class="service-item-text">
-                  Implementing zero-knowledge proofs, secure multi-party computation, and other cryptographic primitives to enable private transactions and confidential data handling on public blockchains.
-                </p>
-              </div>
-            </li>
-        
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/computer-science.png" alt="Web3 icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web3 Application Development</h4>
-                <p class="service-item-text">
-                  Building intuitive decentralized applications with React, ethers.js, and IPFS, creating seamless bridges between traditional web interfaces and blockchain infrastructure.
-                </p>
-              </div>
-            </li>
-        
-          </ul>
-        
+
+        <section id="about" class="about">
+            <div class="section-content">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I'm a passionate software engineer with a strong foundation in computer science and a keen interest in emerging technologies. My journey in tech has been driven by a desire to create innovative solutions that make a difference.</p>
+                        <p>With expertise in full-stack development, machine learning, and blockchain technology, I've worked on diverse projects ranging from AI-powered applications to decentralized finance protocols. I'm particularly interested in the intersection of AI and blockchain, where I believe we can create truly transformative solutions.</p>
+                        <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical writing and speaking engagements.</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <h3>Smart Contract Development</h3>
+                            <p>Expert in developing secure and efficient smart contracts using Solidity, with a focus on DeFi protocols and NFT implementations.</p>
+                        </div>
+                        <div class="skill-card">
+                            <h3>DeFi Protocol Engineering</h3>
+                            <p>Deep understanding of DeFi mechanics, including AMMs, lending protocols, and yield optimization strategies.</p>
+                        </div>
+                        <div class="skill-card">
+                            <h3>Privacy-Preserving Systems</h3>
+                            <p>Experience with zero-knowledge proofs, secure multi-party computation, and privacy-focused blockchain solutions.</p>
+                        </div>
+                        <div class="skill-card">
+                            <h3>Web3 Application Development</h3>
+                            <p>Full-stack development of Web3 applications using React, Node.js, and various blockchain frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        
-        
-    
 
-        <!--
-          - testimonials
-        -->
-        <!-- (Testimonials section is commented out) -->
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+        <!-- Education Section -->
+        <section class="education">
+            <div class="section-content">
+                <h2 class="section-title">Education</h2>
+                <div class="education-section">
+                    <div class="education-item">
+                        <h4>Master of Science, Computer Science</h4>
+                        <p class="institution">University of Oklahoma</p>
+                        <p class="gpa">GPA: 4.00/4.00</p>
+                        <div class="honors">
+                            <p>Honors:</p>
+                            <ul>
+                                <li>President's Honor Roll</li>
+                                <li>Dean's Honor Roll</li>
+                            </ul>
+                        </div>
+                        <div class="coursework">
+                            <p>Relevant Coursework:</p>
+                            <ul>
+                                <li>Cyber Attacks & Defenses</li>
+                                <li>Bitcoin & Cryptocurrencies</li>
+                                <li>Advanced Machine Learning</li>
+                                <li>Database Management</li>
+                                <li>Neural Data Science</li>
+                                <li>Data Mining</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <h4>Bachelor of Science, Computer Science</h4>
+                        <p class="institution">University of Oklahoma</p>
+                        <p class="gpa">GPA: 3.70/4.00</p>
+                        <div class="honors">
+                            <p>Honors:</p>
+                            <ul>
+                                <li>President's Honor Roll</li>
+                                <li>Dean's Honor Roll</li>
+                                <li>AI/ML Scholar</li>
+                                <li>MRE Leadership Scholar</li>
+                                <li>Dorothy Grace Scholar</li>
+                            </ul>
+                        </div>
+                        <div class="coursework">
+                            <p>Relevant Coursework:</p>
+                            <ul>
+                                <li>Linear Algebra I</li>
+                                <li>Algorithm Analysis</li>
+                                <li>Artificial Intelligence</li>
+                                <li>Diff & Integral Calculus I-III</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="modal-content">
+        <section id="experience" class="experience">
+            <div class="section-content">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Software Engineer</h3>
+                            <h4>Vast Vertex, New York City, NY</h4>
+                            <ul>
+                                <li>Designed and deployed scalable cloud infrastructure using AWS EC2/S3, reducing deployment costs by 30%</li>
+                                <li>Containerized applications with Docker and orchestrated clusters via Kubernetes, enhancing uptime for AI/ML workloads</li>
+                                <li>Built features using React.js, which enhanced system reliability and user experience</li>
+                                <li>Led cross-functional teams to build secure REST APIs using Java/Spring Boot, integrating OAuth 2.0 for authentication</li>
+                            </ul>
+                        </div>
+                    </div>
 
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Graduate Teaching Assistant</h3>
+                            <h4>University of Oklahoma, Norman, OK</h4>
+                            <ul>
+                                <li>Taught cloud computing labs using AWS Educate, covering topics like VPC setup and S3 bucket security</li>
+                                <li>Mentored students in building encrypted chat applications using Python and TLS/SSL protocols</li>
+                            </ul>
+                        </div>
+                    </div>
 
-              <time datetime="2021-06-14">14 June, 2021</time>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024 - May 2024</div>
+                        <div class="timeline-content">
+                            <h3>Software Engineer</h3>
+                            <h4>DAVAI, Norman, OK</h4>
+                            <ul>
+                                <li>Deployed NLP models on AWS Lambda for processing 500k+ drug research papers, reducing latency by 40%</li>
+                                <li>Secured data pipelines using Terraform to automate AWS resource provisioning, minimizing manual errors</li>
+                                <li>Built HIPAA-compliant APIs with FastAPI, implementing role-based access control (RBAC) for healthcare partners</li>
+                            </ul>
+                        </div>
+                    </div>
 
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>Software Engineer Intern</h3>
+                            <h4>DCI Consulting, Washington D.C.</h4>
+                            <ul>
+                                <li>Enhanced network security by migrating legacy systems to Azure Virtual Networks with firewall configurations</li>
+                                <li>Developed a secure customer portal using ASP.NET Core and Tailwind CSS, reducing support tickets by 30%</li>
+                                <li>Enhanced source control processes, utilizing Git for version control in all development projects</li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <div class="timeline-content">
+                            <h3>Software Engineer Intern</h3>
+                            <h4>Intelek Technologies, Norman, OK</h4>
+                            <ul>
+                                <li>Automated data transformation processes using Pandas, optimizing ETL workflows and reducing operational time by 20%</li>
+                                <li>Created interactive dashboards using Matplotlib to visualize key performance metrics</li>
+                                <li>Utilized Git to manage source code, ensuring version control and collaborative development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-          </section>
+        <section id="projects" class="projects">
+            <div class="section-content">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <ion-icon name="bulb-outline" class="project-icon"></ion-icon>
+                            <h3>Mistral-7B Finetuning Template</h3>
+                            <p>Developed a comprehensive template for finetuning Mistral-7B models with custom datasets. Features include support for multiple data sources, LoRA for efficient finetuning, 4-bit quantization, and configurable instruction templates. Optimized for memory efficiency while maintaining model performance.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Transformers</span>
+                                <span>LoRA</span>
+                                <span>PyTorch</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/natalie-a-1/Mistral-Finetune" target="_blank" class="btn secondary">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="project-card">
+                        <div class="project-content">
+                            <ion-icon name="people-outline" class="project-icon"></ion-icon>
+                            <h3>AI Politician</h3>
+                            <p>Led development of an AI-powered political debate simulation system using Transformers and CUDA-accelerated models. Implemented a real-time NLP pipeline with ChromaDB/Redis for efficient response generation. Built a FastAPI backend with PostgreSQL, achieving 200ms response times for debate interactions.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Transformers</span>
+                                <span>FastAPI</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/SecretLabOU/aipolitician" target="_blank" class="btn secondary">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <ion-icon name="shield-checkmark-outline" class="project-icon"></ion-icon>
+                            <h3>Cybernator</h3>
+                            <p>Created an advanced cybersecurity automation tool that integrates with various security platforms. Features include automated threat detection, incident response workflows, and real-time security monitoring. Built with modular architecture for easy integration with existing security infrastructure.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Security</span>
+                                <span>Automation</span>
+                                <span>API Integration</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/natalie-a-1/Cybernator" target="_blank" class="btn secondary">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meta Scraper -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <ion-icon name="search-outline" class="project-icon"></ion-icon>
+                            <h3>Meta Scraper</h3>
+                            <p>Developed a high-performance web scraping tool specifically designed for extracting metadata from various web sources. Features include concurrent scraping, rate limiting, and intelligent parsing of structured data. Built with scalability in mind for handling large-scale data collection tasks.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Web Scraping</span>
+                                <span>Concurrency</span>
+                                <span>Data Processing</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/natalie-a-1/Meta-Scraper" target="_blank" class="btn secondary">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- StinkyCoin -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <ion-icon name="wallet-outline" class="project-icon"></ion-icon>
+                            <h3>StinkyCoin</h3>
+                            <p>A tribute to my cat, Stinky, this ERC-20 token lives on the Ethereum Sepolia testnet. Features include custom supply deployment, OpenZeppelin standards compliance, and seamless MetaMask integration. A playful exploration of blockchain development and smart contract deployment.</p>
+                            <div class="project-tech">
+                                <span>Solidity</span>
+                                <span>Ethereum</span>
+                                <span>ERC-20</span>
+                                <span>OpenZeppelin</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/natalie-a-1/StinkyCoin" target="_blank" class="btn secondary">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Market Analysis -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <ion-icon name="analytics-outline" class="project-icon"></ion-icon>
+                            <h3>Job Market Trend Analysis</h3>
+                            <p>Processed 29k+ job records using Pandas and Scikit-Learn, developing ML models (KNN, k-means, ARIMA) for trend prediction. Built a React/Flask dashboard with interactive visualizations, reducing data processing time by 35% through feature engineering.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>React</span>
+                                <span>Flask</span>
+                                <span>Machine Learning</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn video-link" data-video="https://www.youtube.com/embed/-u_I-_DC4yQ?si=y_eT5V8oq5EXgfy6">
+                                    <ion-icon name="play-circle"></ion-icon>
+                                    Watch Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Podcast Generator -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <ion-icon name="mic-outline" class="project-icon"></ion-icon>
+                            <h3>AI-Driven Podcast Generator</h3>
+                            <p>Led development of NLP platform converting research papers to podcasts, reducing content production time by 60% through automated summarization.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>NLP</span>
+                                <span>FastAPI</span>
+                                <span>OpenAI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn video-link" data-video="https://player.vimeo.com/video/1036426775">
+                                    <ion-icon name="play-circle"></ion-icon>
+                                    Watch Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drug Analytics AI -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <ion-icon name="medical-outline" class="project-icon"></ion-icon>
+                            <h3>Drug Analytics & Validation AI</h3>
+                            <p>Developed HIPAA-compliant NLP platform processing 500k+ research papers, reducing drug discovery cycle time by 45% through automated analysis.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>NLP</span>
+                                <span>FastAPI</span>
+                                <span>AWS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn video-link" data-video="https://www.youtube.com/embed/your-video-id">
+                                    <ion-icon name="play-circle"></ion-icon>
+                                    Watch Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SIPPC Analysis -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <ion-icon name="fitness-outline" class="project-icon"></ion-icon>
+                            <h3>SIPPC - Infant Motor Behavior Analysis</h3>
+                            <p>Analyzed 500+ infant movement patterns using Pandas and Matplotlib, developing ML models for motor development prediction. Implemented a Kubernetes-managed deployment pipeline, achieving 92% accuracy in movement pattern classification.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Machine Learning</span>
+                                <span>Kubernetes</span>
+                                <span>Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="section-content">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-content">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always excited to discuss new projects, opportunities, or just chat about technology. Feel free to reach out!</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <ion-icon name="mail-outline"></ion-icon>
+                                <a href="mailto:nataliehill1324@gmail.com">nataliehill1324@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <ion-icon name="location-outline"></ion-icon>
+                                <a href="#">Dallas, TX</a>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/natalie-a-1" target="_blank" class="social-link">
+                                <ion-icon name="logo-github"></ion-icon>
+                                GitHub
+                            </a>
+                            <a href="https://discord.com/users/arnoldpalmer01" target="_blank" class="social-link">
+                                <ion-icon name="logo-discord"></ion-icon>
+                                Discord
+                            </a>
+                            <a href="https://www.linkedin.com/in/natalie-hill-software-engineer/" target="_blank" class="social-link">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="section-content">
+            <p>&copy; 2024 Natalie Hill. All rights reserved.</p>
         </div>
-
-
-        <!--
-          - clients
-        -->
-        <!-- (Clients section is commented out) -->
-
-      </article>
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-      
-        <section class="timeline">
-      
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Education</h3>
-          </div>
-      
-          <ol class="timeline-list">
-      
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Master of Science, Computer Science</h4>
-              <span>University of Oklahoma | 2023 - 2025</span>
-              <p class="timeline-text">
-                Achieved a GPA of 4.0/4.0 with a focus on artificial intelligence, machine learning, and data science.
-              </p>
-            </li>
-      
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Bachelor of Science, Computer Science</h4>
-              <span>University of Oklahoma | 2021 - 2024</span>
-              <p class="timeline-text">
-                Graduated with a GPA of 3.7/4.0, gaining strong foundational skills in software engineering, data structures, and algorithm design.
-              </p>
-            </li>
-      
-          </ol>
-      
-        </section>
-      
-        <section class="timeline">
-      
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="briefcase-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Experience</h3>
-          </div>
-          
-          <ol class="timeline-list">
-          
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Software Engineer</h4>
-              <span>Vast Vertex, New York City, NY | Apr 2024 – Present</span>
-              <p class="timeline-text">
-                ● Designed and deployed scalable cloud infrastructure using AWS EC2/S3, reducing deployment costs by 30%<br><br>
-                ● Containerized applications with Docker and orchestrated clusters via Kubernetes, enhancing uptime for AI/ML workloads<br><br>
-                ● Built features using React.js, which enhanced system reliability and user experience<br><br>
-                ● Led cross-functional teams to build secure REST APIs using Java/Spring Boot, integrating OAuth 2.0 for authentication
-              </p>
-            </li>
-          
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Graduate Teaching Assistant</h4>
-              <span>University of Oklahoma, Norman, OK | Aug 2024 – Present</span>
-              <p class="timeline-text">
-                ● Taught cloud computing labs using AWS Educate, covering topics like VPC setup and S3 bucket security<br><br>
-                ● Mentored students in building encrypted chat applications using Python and TLS/SSL protocols
-              </p>
-            </li>
-          
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Software Engineer Intern</h4>
-              <span>DCI Consulting, Washington D.C. | Jan 2023 – Jan 2024</span>
-              <p class="timeline-text">
-                ● Enhanced network security by migrating legacy systems to Azure Virtual Networks with firewall configurations<br><br>
-                ● Developed a secure customer portal using ASP.NET Core and Tailwind CSS, reducing support tickets by 30%<br><br>
-                ● Enhanced source control processes, utilizing Git for version control in all development projects
-              </p>
-            </li>
-          
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Software Engineer</h4>
-              <span>DAVAI, Norman, OK | Jan 2024 – May 2024</span>
-              <p class="timeline-text">
-                ● Deployed NLP models on AWS Lambda for processing 500k+ drug research papers, reducing latency by 40%<br><br>
-                ● Secured data pipelines using Terraform to automate AWS resource provisioning, minimizing manual errors<br><br>
-                ● Built HIPAA-compliant APIs with FastAPI, implementing role-based access control (RBAC) for healthcare partners
-              </p>
-            </li>
-          
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Software Engineer Intern</h4>
-              <span>Intelek Technologies, Norman, OK | Jul 2022 – Jan 2023</span>
-              <p class="timeline-text">
-                ● Automated data transformation processes using Pandas, optimizing ETL workflows and reducing operational time by 20%<br><br>
-                ● Created interactive dashboards using Matplotlib to visualize key performance metrics<br><br>
-                ● Utilized Git to manage source code, ensuring version control and collaborative development
-              </p>
-            </li>
-          
-          </ol>
-          
-          </section>
-      
-        <!-- <section class="skill">
-      
-          <h3 class="h3 skills-title">My Skills</h3>
-      
-          <ul class="skills-list content-card">
-      
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Python & Data Analysis</h5>
-                <data value="90">90%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-            </li>
-      
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Machine Learning</h5>
-                <data value="85">85%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
-              </div>
-            </li>
-      
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Natural Language Processing (NLP)</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-            </li>
-      
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Spring Boot & Back-End Development</h5>
-                <data value="75">75%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
-            </li>
-      
-          </ul>
-      
-        </section> -->
-      
-      </article>
-    
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-      
-        <section class="projects">
-      
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
-      
-            <ul class="select-list">
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>AI/ML</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Data Science</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-            </ul>
-          </div>
-      
-          <ul class="project-list">
-      
-            <!-- Job Market Trend Analysis (YouTube Video Modal) -->
-            <li class="project-item active" data-filter-item data-category="Data Science" 
-                data-modal-type="video" data-modal-url="https://www.youtube.com/embed/-u_I-_DC4yQ?si=d5BBOHCxO4qOlQBV">
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="play-circle-outline"></ion-icon>
-                </div>
-                <img src="./assets/images/job-market-analysis.svg" alt="Job Market Analysis" loading="lazy">
-              </figure>
-              <h3 class="project-title">Job Market Trend Analysis</h3>
-              <p class="project-category">Data Science</p>
-              <p class="project-text">
-                Processed 29k+ job records using Pandas and Scikit-Learn, developing ML models (KNN, k-means, ARIMA) for trend prediction. Built a React/Flask dashboard with interactive visualizations, reducing data processing time by 35% through feature engineering.
-              </p>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="AI/ML">
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="medical-outline"></ion-icon>
-                </div>
-                <img src="./assets/images/davai.svg" alt="DAvAI" loading="lazy">
-              </figure>
-              <h3 class="project-title">Drug Analytics & Validation AI</h3>
-              <p class="project-category">AI/ML</p>
-              <p class="project-text">
-                Developed HIPAA-compliant NLP platform processing 500k+ research papers,
-                reducing drug discovery cycle time by 45% through automated analysis.
-              </p>
-            </li>
-      
-            <!-- SIPPC Project (Updated Details) -->
-            <li class="project-item active" data-filter-item data-category="Applications">
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="analytics-outline"></ion-icon>
-                </div>
-                <img src="./assets/images/sippc.svg" alt="SIPPC Analysis" loading="lazy">
-              </figure>
-              <h3 class="project-title">SIPPC - Infant Motor Behavior Analysis</h3>
-              <p class="project-category">Applications</p>
-              <p class="project-text">
-                Analyzed 500+ infant movement patterns using Pandas and Matplotlib, developing ML models for motor development prediction. Implemented a Kubernetes-managed deployment pipeline, achieving 92% accuracy in movement pattern classification.
-              </p>
-            </li>
-      
-            <!-- Existing Projects Below -->
-            <li class="project-item active" data-filter-item data-category="AI/ML" 
-                data-modal-type="video" data-modal-url="https://player.vimeo.com/video/1036426775">
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-                <img src="./assets/images/ai-podcast.svg" alt="Vast Vertex" loading="lazy">
-              </figure>
-              <h3 class="project-title">AI-Driven Podcast Generator</h3>
-              <p class="project-category">AI/ML</p>
-              <p class="project-text">
-                Led development of NLP platform converting research papers to podcasts,
-                reducing content production time by 60% through automated summarization.
-              </p>
-            </li>
-      
-            <!-- Political Debate Simulation (Text Only Modal) -->
-            <li class="project-item active" data-filter-item data-category="AI/ML">
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="document-text-outline"></ion-icon>
-                </div>
-                <img src="./assets/images/political-debate.svg" alt="Debate Simulation" loading="lazy">
-              </figure>
-              <h3 class="project-title">Political Debate Simulation</h3>
-              <p class="project-category">AI/ML</p>
-              <p class="project-text">
-                Developed AI agents using Transformers and CUDA-accelerated models, implementing a real-time NLP pipeline with ChromaDB/Redis. Built a FastAPI backend with a PostgreSQL database, achieving a 200ms response time for debate interactions.
-              </p>
-            </li>
-      
-          </ul>
-      
-        </section>
-      
-      </article>
-  <!-- 
-    <header>
-      <h2 class="h2 article-title">Portfolio</h2>
-    </header> -->
-
-    <!-- <section class="portfolio-projects">
-
-      <ul class="project-list">
-
-        <li class="project-item">
-          <a href="#">
-
-            <figure class="project-banner-box">
-              <img src="./assets/images/project-1.jpg" alt="SIPPC Data Analysis" loading="lazy">
-            </figure>
-
-            <div class="project-content">
-
-              <div class="project-meta">
-                <p class="project-category">AI/ML</p>
-
-                <span class="dot"></span>
-
-                <time datetime="2023-04-15">April 15, 2023</time>
-              </div>
-
-              <h3 class="h3 project-item-title">SIPPC - Self-Initiated Prone Powered Crawler</h3>
-
-              <p class="project-text">
-                Conducted data analysis on infant motor behavior using Pandas, Matplotlib, and NumPy, assessing the impact of the SIPPC robotic device on developmental progress.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="project-item">
-          <a href="#">
-
-            <figure class="project-banner-box">
-              <img src="./assets/images/project-2.jpg" alt="DAvAI Project" loading="lazy">
-            </figure>
-
-            <div class="project-content">
-
-              <div class="project-meta">
-                <p class="project-category">AI/ML</p>
-
-                <span class="dot"></span>
-
-                <time datetime="2023-08-12">August 12, 2023</time>
-              </div>
-
-              <h3 class="h3 project-item-title">DAvAI - Drug Analytics & Validation with AI</h3>
-
-              <p class="project-text">
-                Developed an AI-powered platform to automate the retrieval and vectorization of 500k+ research papers, supporting drug development and repurposing with NLP models for content extraction.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="project-item">
-          <a href="#">
-
-            <figure class="project-banner-box">
-              <img src="./assets/images/project-3.jpg" alt="Vast Vertex" loading="lazy">
-            </figure>
-
-            <div class="project-content">
-
-              <div class="project-meta">
-                <p class="project-category">Applications</p>
-
-                <span class="dot"></span>
-
-                <time datetime="2024-01-10">January 10, 2024</time>
-              </div>
-
-              <h3 class="h3 project-item-title">Vast Vertex - AI-Driven Podcast Generator</h3>
-
-              <p class="project-text">
-                Led the development of a platform that converts research papers into podcasts using Python FastAPI and OpenAI API, enhancing content accessibility through AI-powered audio generation.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="project-item">
-          <a href="#">
-
-            <figure class="project-banner-box">
-              <img src="./assets/images/project-4.jpg" alt="Automated Data Scraping" loading="lazy">
-            </figure>
-
-            <div class="project-content">
-
-              <div class="project-meta">
-                <p class="project-category">Data Science</p>
-
-                <span class="dot"></span>
-
-                <time datetime="2023-06-18">June 18, 2023</time>
-              </div>
-
-              <h3 class="h3 project-item-title">Automated Data Scraping & Vectorization</h3>
-
-              <p class="project-text">
-                Created a solution for automating the retrieval and vectorization of over 500k research papers, applying NLP and data processing techniques for efficient data handling in drug research.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-      </ul>
-
-    </section> -->
-<!-- 
-</article> -->
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <!-- (Blog section is commented out) -->
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <!-- 
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section> 
-        -->
-
-        <!-- 
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section> 
-        -->
-
-      </article>
-
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="close-modal">&times;</span>
+            <iframe id="videoFrame" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 
-  </main>
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
 
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
+        });
 
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
 
+        themeToggle.addEventListener('click', () => {
+            html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
 
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        // GSAP animations
+        gsap.registerPlugin(ScrollTrigger);
 
-  <!-- Video Modal Structure -->
-  <div class="video-modal-container" data-video-modal-container>
-    <div class="video-overlay" data-video-overlay></div>
-    <div class="video-modal">
-      <button class="video-modal-close-btn" data-video-modal-close-btn>
-        <ion-icon name="close-outline"></ion-icon>
-      </button>
-      <div class="video-container" data-modal-content>
-        <!-- Dynamic Content will be injected here -->
-      </div>
-    </div>
-  </div>
+        // Fade in sections on scroll
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    end: 'top 20%',
+                    scrub: 1
+                }
+            });
+        });
 
+        // Animate skill cards
+        gsap.utils.toArray('.skill-card').forEach((card, index) => {
+            gsap.from(card, {
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                delay: index * 0.1,
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 80%',
+                    end: 'top 20%',
+                    scrub: 1
+                }
+            });
+        });
+
+        // Animate project cards
+        gsap.utils.toArray('.project-card').forEach((card, index) => {
+            gsap.from(card, {
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                delay: index * 0.1,
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 80%',
+                    end: 'top 20%',
+                    scrub: 1
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 </body>
-
-</html>
+</html> 
