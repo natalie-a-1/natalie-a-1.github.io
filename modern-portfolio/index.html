@@ -19,20 +19,26 @@
 
     <nav class="navbar">
         <div class="nav-content">
-            <a href="https://github.com/sponsors/natalie-a-1" class="logo" target="_blank">
-                <span class="logo-text">Sponsor</span>
-                <ion-icon name="heart-outline"></ion-icon>
+            <a href="#" class="logo">
+                <ion-icon name="code-slash-outline"></ion-icon>
+                <span class="logo-text">Natalie Hill</span>
             </a>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
+                <a href="https://github.com/sponsors/natalie-a-1" class="sponsor-btn">Sponsor Me</a>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                     <ion-icon name="sunny-outline" class="sun-icon"></ion-icon>
                     <ion-icon name="moon-outline" class="moon-icon"></ion-icon>
                 </button>
             </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -517,6 +523,31 @@
                     scrub: 1
                 }
             });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
         });
     </script>
 </body>
