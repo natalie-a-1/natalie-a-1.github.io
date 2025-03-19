@@ -1305,84 +1305,79 @@ body {
 
 /* Education Section */
 .education {
-    padding: 4rem 0;
     background: var(--color-background);
+    padding: 4rem 0;
 }
 
 .education-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     max-width: 800px;
     margin: 0 auto;
-    padding: 3rem;
-    background: var(--blur-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 30px;
-    border: 1px solid var(--glass-border);
-}
-
-.education-section h3 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--color-text);
-    font-weight: 700;
-    letter-spacing: -0.5px;
 }
 
 .education-item {
-    margin-bottom: 3rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--color-border);
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2rem;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
-.education-item:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
+.education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-primary);
+    opacity: 0;
+    transition: var(--transition);
 }
 
 .education-item:hover {
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.education-item:hover::before {
+    opacity: 1;
 }
 
 .education-item h4 {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--color-text);
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
-    letter-spacing: -0.3px;
 }
 
 .education-item .institution {
-    color: var(--color-text-secondary);
     font-size: 1.1rem;
-    margin-bottom: 0.75rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
     font-weight: 500;
 }
 
 .education-item .gpa {
-    color: var(--color-primary);
     font-size: 1rem;
-    font-weight: 500;
+    color: var(--color-text-secondary);
     margin-bottom: 1.5rem;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: rgba(0, 113, 227, 0.1);
-    border-radius: 980px;
 }
 
 .education-item .honors,
 .education-item .coursework {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .education-item .honors p,
 .education-item .coursework p {
-    color: var(--color-text);
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    color: var(--color-primary);
     font-weight: 500;
-    letter-spacing: -0.2px;
+    margin-bottom: 0.5rem;
 }
 
 .education-item ul {
@@ -1390,44 +1385,30 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
 }
 
 .education-item ul li {
     color: var(--color-text-secondary);
     font-size: 0.95rem;
-    padding: 0.75rem 1.25rem;
-    background: var(--color-secondary);
-    border-radius: 12px;
-    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    background: var(--color-background);
+    border-radius: 8px;
     border: 1px solid var(--color-border);
 }
 
-.education-item ul li:hover {
-    background: var(--color-primary);
-    color: white;
-    transform: translateY(-2px);
-    border-color: var(--color-primary);
-}
-
 @media (max-width: 768px) {
-    .education-section {
-        padding: 2rem;
-    }
-
-    .education-section h3 {
-        font-size: 1.75rem;
-        margin-bottom: 2rem;
-    }
-
     .education-item {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
+        padding: 1.5rem;
     }
 
     .education-item h4 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
+    }
+
+    .education-item .institution {
+        font-size: 1rem;
     }
 
     .education-item ul {
