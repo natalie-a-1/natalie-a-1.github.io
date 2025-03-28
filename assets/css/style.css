@@ -446,33 +446,44 @@ body {
     transition: var(--transition);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+}
+
+.btn i {
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
 .btn.primary {
     background: var(--color-primary);
     color: white;
     border: none;
+    text-decoration: none;
 }
 
 .btn.primary:hover {
     background: var(--color-primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+    text-decoration: none;
 }
 
 .btn.secondary {
     background: transparent;
     color: var(--color-text);
     border: 1px solid var(--color-border);
+    text-decoration: none;
 }
 
 .btn.secondary:hover {
     background: var(--color-hover);
     border-color: var(--color-primary);
     transform: translateY(-2px);
+    text-decoration: none;
 }
 
 .hero-background {
@@ -827,6 +838,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .project-content h3 {
@@ -835,6 +848,7 @@ body {
     color: var(--color-text);
     font-weight: 600;
     letter-spacing: -0.5px;
+    text-align: left;
 }
 
 .project-content p {
@@ -843,6 +857,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     flex-grow: 1;
+    text-align: left;
 }
 
 .project-tech {
@@ -850,6 +865,7 @@ body {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin: 1.5rem 0;
+    justify-content: flex-start;
 }
 
 .project-tech span {
@@ -872,6 +888,7 @@ body {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .project-links .btn {
@@ -901,10 +918,11 @@ body {
 }
 
 .project-icon {
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    transition: var(--transition);
+    font-size: 2rem !important;
+    display: block !important;
+    margin: 0 auto 1rem 0 !important;
+    text-align: left !important;
+    color: var(--color-primary) !important;
 }
 
 .project-card:hover .project-icon {
@@ -996,7 +1014,7 @@ body {
 }
 
 .social-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
@@ -1009,6 +1027,11 @@ body {
     transition: var(--transition);
     border: 1px solid var(--color-border);
     min-width: 160px;
+}
+
+.social-link i {
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
 .social-link:hover {
@@ -1470,46 +1493,48 @@ body {
     transition: var(--transition);
     position: relative;
     margin-left: 1rem;
+    overflow: visible;
 }
 
 .theme-toggle:hover {
     background: var(--color-hover);
 }
 
-.theme-toggle ion-icon {
-    font-size: 1.2rem;
+.theme-toggle i {
+    font-size: 1.2rem !important;
     transition: var(--transition);
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .theme-toggle .sun-icon {
-    position: absolute;
-    opacity: 1;
-    transform: rotate(0deg);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .theme-toggle .moon-icon {
-    position: absolute;
-    opacity: 0;
-    transform: rotate(-180deg);
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translate(-50%, -50%) rotate(-180deg);
 }
 
 /* Dark mode styles for theme toggle */
-[data-theme="dark"] .theme-toggle {
-    color: var(--color-text);
-}
-
-[data-theme="dark"] .theme-toggle:hover {
-    background: var(--color-hover);
-}
-
 [data-theme="dark"] .theme-toggle .sun-icon {
-    opacity: 0;
-    transform: rotate(180deg);
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translate(-50%, -50%) rotate(180deg);
 }
 
 [data-theme="dark"] .theme-toggle .moon-icon {
-    opacity: 1;
-    transform: rotate(0deg);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translate(-50%, -50%) rotate(0deg);
 }
 
 /* Update navbar styles for dark mode */
@@ -1657,4 +1682,93 @@ body {
         rgba(255, 255, 255, 0.1), 
         transparent
     );
+}
+
+/* Fix for icons */
+.fa-solid, .fa-brands, .fa-regular {
+    display: inline-block !important;
+    visibility: visible !important;
+    font-size: inherit;
+    vertical-align: -0.125em;
+    overflow: visible !important;
+    opacity: 1 !important;
+}
+
+.nav-links a i,
+.btn i,
+.project-icon,
+.social-link i,
+.contact-item i,
+.project-links a i,
+.hero-cta a i {
+    display: inline-block !important;
+    margin-right: 0.5rem;
+}
+
+/* Specific sizing for various icons */
+.project-icon {
+    font-size: 2rem !important;
+    display: block !important;
+    margin: 0 auto 1rem 0 !important;
+    text-align: left !important;
+    color: var(--color-primary) !important;
+}
+
+.logo i {
+    font-size: 1.2rem !important;
+    display: inline-block !important;
+}
+
+.theme-toggle i {
+    font-size: 1.2rem !important;
+    display: block !important;
+}
+
+/* Remove underlines from all icons in links */
+a i, 
+button i,
+.btn i,
+.social-link i,
+.contact-item i,
+.project-links a i,
+.hero-cta a i {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Global icon styles to override any text decoration */
+i.fa-solid,
+i.fa-brands,
+i.fa-regular,
+.fa-solid,
+.fa-brands,
+.fa-regular,
+[class^="fa-"],
+[class*=" fa-"] {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+a:has(i),
+button:has(i) {
+    text-decoration: none !important;
+}
+
+.hero-cta .btn {
+    text-decoration: none !important;
+}
+
+.hero-cta .btn i,
+.hero-cta .btn span {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Force project icons to be blue */
+.project-content i.fa-solid.project-icon,
+.project-card i.fa-solid.project-icon,
+.projects-grid i.project-icon,
+.project-content i.project-icon {
+    color: var(--color-primary) !important;
 } 
