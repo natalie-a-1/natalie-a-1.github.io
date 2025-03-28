@@ -10,10 +10,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Custom Cursor
     const cursor = document.querySelector('.cursor');
     const cursorFollower = document.querySelector('.cursor-follower');
-
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    let followerX = 0;
+    let followerY = 0;
+    
+    // Use requestAnimationFrame for smoother cursor movement
+    function updateCursor() {
+        // Calculate smooth movement with easing
+        cursorX += (mouseX - cursorX) * 0.8;
+        cursorY += (mouseY - cursorY) * 0.8;
+        followerX += (mouseX - followerX) * 0.1;
+        followerY += (mouseY - followerY) * 0.1;
+        
+        // Apply transforms with hardware acceleration
+        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+        cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0)`;
+        
+        requestAnimationFrame(updateCursor);
+    }
+    
+    // Efficient event handler with passive option for better performance
     document.addEventListener('mousemove', (e) => {
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-        cursorFollower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    }, { passive: true });
+    
+    // Start animation loop
+    requestAnimationFrame(updateCursor);
+    
+    // Cursor interaction effects
+    const cursorTargets = document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .timeline-item, .social-link');
+    
+    cursorTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'translate3d(' + mouseX + 'px, ' + mouseY + 'px, 0) scale(1.5)';
+            cursorFollower.style.transform = 'translate3d(' + followerX + 'px, ' + followerY + 'px, 0) scale(1.5)';
+            cursorFollower.style.background = 'rgba(var(--color-primary-rgb), 0.1)';
+            cursorFollower.style.borderWidth = '1px';
+        });
+        
+        target.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'translate3d(' + mouseX + 'px, ' + mouseY + 'px, 0) scale(1)';
+            cursorFollower.style.transform = 'translate3d(' + followerX + 'px, ' + followerY + 'px, 0) scale(1)';
+            cursorFollower.style.background = 'transparent';
+            cursorFollower.style.borderWidth = '2px';
+        });
     });
 
     // Smooth Scroll for Navigation Links
