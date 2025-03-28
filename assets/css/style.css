@@ -659,22 +659,28 @@ body {
 .experience {
     padding: 4rem 0;
     background: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .timeline {
     position: relative;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
+    top: 0;
+    bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
     width: 2px;
-    height: 100%;
+    margin-left: -1px;
     background: var(--color-border);
+    display: none; /* Hide on mobile */
 }
 
 .timeline-item {
@@ -685,6 +691,22 @@ body {
     padding: 2rem;
     margin-bottom: 2rem;
     transition: var(--transition);
+    width: 100%;
+    max-width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .timeline-item:hover {
@@ -733,6 +755,57 @@ body {
     color: var(--color-text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
+}
+
+/* Circle markers for timeline */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    top: 24px;
+    z-index: 10;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -8px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -8px;
+}
+
+/* Media queries for timeline */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+        margin-left: 0;
+        display: block;
+    }
+
+    .timeline-item {
+        width: 100%;
+        max-width: calc(100% - 50px);
+        margin-left: 50px;
+        margin-right: 0;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        margin-left: 50px;
+        margin-right: 0;
+    }
+
+    .timeline-item::before,
+    .timeline-item:nth-child(odd)::before,
+    .timeline-item:nth-child(even)::before {
+        left: -8px;
+        right: auto;
+    }
 }
 
 /* Projects Section */
@@ -1115,7 +1188,7 @@ body {
     }
 
     [data-theme="dark"] .nav-links {
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.95);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-left: 1px solid var(--color-border);
@@ -1138,19 +1211,16 @@ body {
         font-size: 2rem;
     }
 
+    /* Timeline mobile styles */
     .timeline::before {
-        left: 0;
+        left: 20px;
+        margin-left: 0;
     }
 
     .timeline-item {
         width: 100%;
         padding-left: 2rem;
-        padding-right: 0;
-    }
-
-    .timeline-item:nth-child(even) {
-        margin-left: 0;
-        padding-left: 2rem;
+        padding-right: 1rem;
     }
 
     .about-grid {
@@ -1170,7 +1240,9 @@ body {
         padding: 1.25rem;
     }
 
-    .project-card {
+    .project-card,
+    .timeline-item,
+    .skill-card {
         padding: 1.5rem;
     }
     
@@ -1653,25 +1725,28 @@ body {
     background: var(--color-primary-hover);
 }
 
-/* Enhanced Mobile Responsiveness */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 3rem;
+/* Timeline desktop styles */
+@media (min-width: 769px) {
+    .timeline::before {
+        display: block; /* Show the timeline line on desktop */
     }
     
-    .hero-subtitle {
-        font-size: 1.25rem;
+    /* Add connecting lines from each box to the center line */
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 8%;
+        height: 2px;
+        background-color: var(--color-border);
+        top: 32px;
     }
     
-    .btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.875rem;
+    .timeline-item:nth-child(odd)::after {
+        right: -8%;
     }
     
-    .project-card,
-    .timeline-item,
-    .skill-card {
-        padding: 1.5rem;
+    .timeline-item:nth-child(even)::after {
+        left: -8%;
     }
 }
 
@@ -1771,4 +1846,19 @@ button:has(i) {
 .projects-grid i.project-icon,
 .project-content i.project-icon {
     color: var(--color-primary) !important;
+}
+
+/* Ensure experience section visibility */
+section#experience {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#experience .timeline,
+#experience .timeline-item,
+#experience .timeline-content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 } 
