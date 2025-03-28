@@ -35,39 +35,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hero Section Animation
     gsap.from('.hero-title', {
-        duration: 1,
-        y: 50,
+        duration: 0.7,
+        y: 30,
         opacity: 0,
-        ease: 'power3.out'
+        ease: 'power2.out'
     });
 
     gsap.from('.hero-subtitle', {
-        duration: 1,
-        y: 30,
+        duration: 0.7,
+        y: 20,
         opacity: 0,
-        delay: 0.3,
-        ease: 'power3.out'
+        delay: 0.2,
+        ease: 'power2.out'
     });
 
     gsap.from('.hero-cta', {
-        duration: 1,
-        y: 30,
+        duration: 0.7,
+        y: 20,
         opacity: 0,
-        delay: 0.6,
-        ease: 'power3.out'
+        delay: 0.3,
+        ease: 'power2.out'
     });
 
     gsap.from('.about-text p', {
         scrollTrigger: {
             trigger: '.about-text',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            toggleActions: 'play none none none'
         },
-        duration: 1,
-        y: 30,
+        duration: 0.6,
+        y: 20,
         opacity: 0,
-        stagger: 0.2,
-        ease: 'power3.out'
+        stagger: 0.1,
+        ease: 'power2.out'
     });
 
     // Section Animations
@@ -76,14 +76,15 @@ document.addEventListener('DOMContentLoaded', function() {
         gsap.from(section, {
             scrollTrigger: {
                 trigger: section,
-                start: 'top 80%',
+                start: 'top 85%',
                 end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
+                toggleActions: 'play none none none',
+                once: true
             },
-            y: 50,
+            y: 30,
             opacity: 0,
-            duration: 1,
-            ease: 'power3.out'
+            duration: 0.6,
+            ease: 'power2.out'
         });
     });
 
@@ -91,42 +92,45 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.from('.skill-card', {
         scrollTrigger: {
             trigger: '.skills-grid',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true
         },
-        duration: 0.8,
-        y: 30,
-        opacity: 1,
-        stagger: 0.2,
-        ease: 'power3.out'
+        duration: 0.5,
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        ease: 'power2.out'
     });
 
     // Project Cards Animation
     gsap.from('.project-card', {
         scrollTrigger: {
             trigger: '.projects-grid',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true
         },
-        y: 30,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out'
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'power2.out'
     });
 
     // Timeline Animation
     gsap.from('.timeline-item', {
         scrollTrigger: {
             trigger: '.timeline',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true
         },
-        x: -50,
+        y: 20,
         opacity: 0,
-        duration: 1,
-        stagger: 0.3,
-        ease: 'power3.out'
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'power2.out'
     });
 
     // Navbar Background Change on Scroll
